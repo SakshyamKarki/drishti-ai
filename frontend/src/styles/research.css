@@ -1,0 +1,420 @@
+@reference "tailwindcss";
+@reference "../index.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ── Page ─────────────────────────────────────────────────────────────────── */
+.rsc-page {
+  @apply px-6 py-8 max-w-7xl mx-auto;
+}
+
+/* ── Header ───────────────────────────────────────────────────────────────── */
+.rsc-header {
+  @apply mb-8 text-center;
+}
+
+.rsc-header-tag {
+  @apply inline-block text-xs uppercase tracking-widest mb-3 px-3 py-1 rounded-full;
+  font-family: "DM Mono", monospace;
+  color: #818cf8;
+  background: rgba(99,102,241,0.1);
+  border: 0.5px solid rgba(99,102,241,0.25);
+}
+
+.rsc-title {
+  font-family: "Syne", sans-serif;
+  @apply text-3xl font-bold text-slate-100 mb-3;
+}
+
+.rsc-subtitle {
+  @apply text-sm max-w-2xl mx-auto leading-relaxed;
+  color: #484f58;
+}
+
+/* ── Pills ────────────────────────────────────────────────────────────────── */
+.rsc-pills {
+  @apply flex flex-wrap gap-2 justify-center mt-5;
+}
+
+.rsc-pill {
+  @apply flex flex-col items-center px-3 py-1.5 rounded-xl;
+  background: rgba(255,255,255,0.03);
+  border: 0.5px solid rgba(255,255,255,0.08);
+}
+
+.rsc-pill-label {
+  @apply text-xs;
+  color: #484f58;
+  font-family: "DM Mono", monospace;
+}
+
+.rsc-pill-val {
+  @apply text-xs font-medium text-slate-300;
+}
+
+/* ── KPI Row ──────────────────────────────────────────────────────────────── */
+.rsc-kpi-row {
+  @apply grid grid-cols-6 gap-3 mb-8;
+}
+
+.rsc-kpi {
+  @apply flex flex-col items-center text-center rounded-2xl px-4 py-5;
+  background: rgba(13,17,23,0.95);
+  border: 1px solid #21262d;
+}
+
+.rsc-kpi-label {
+  font-family: "DM Mono", monospace;
+  @apply text-xs uppercase tracking-wider mb-2;
+  color: #484f58;
+}
+
+.rsc-kpi-val {
+  font-family: "Syne", sans-serif;
+  @apply text-2xl font-bold leading-none mb-1;
+}
+
+.rsc-kpi-sub {
+  @apply text-xs;
+  color: #484f58;
+}
+
+/* ── Tabs ─────────────────────────────────────────────────────────────────── */
+.rsc-tabs {
+  @apply flex gap-1 mb-6;
+  background: rgba(13,17,23,0.95);
+  border: 1px solid #21262d;
+  border-radius: 14px;
+  padding: 4px;
+  width: fit-content;
+}
+
+.rsc-tab {
+  @apply px-4 py-2 rounded-xl text-xs font-medium cursor-pointer transition-all border-none;
+  font-family: "DM Sans", sans-serif;
+  color: #484f58;
+  background: transparent;
+}
+
+.rsc-tab.active {
+  background: rgba(99,102,241,0.2);
+  color: #818cf8;
+}
+
+.rsc-tab:hover:not(.active) {
+  background: rgba(255,255,255,0.04);
+  color: #8b949e;
+}
+
+/* ── Model Cards Grid ─────────────────────────────────────────────────────── */
+.rsc-cards-grid {
+  @apply grid grid-cols-3 gap-4;
+}
+
+.rsc-model-card {
+  @apply rounded-2xl p-5 relative;
+  background: rgba(13,17,23,0.95);
+  border: 1px solid #21262d;
+  transition: border-color 0.2s;
+}
+
+.rsc-model-card:hover {
+  border-color: rgba(var(--model-color-rgb, 255,255,255), 0.3);
+}
+
+.rsc-model-card.best {
+  border-color: rgba(245,158,11,0.4);
+  box-shadow: 0 0 20px rgba(245,158,11,0.05);
+}
+
+.rsc-best-badge {
+  @apply absolute top-3 right-3 text-xs px-2 py-0.5 rounded-lg;
+  background: rgba(245,158,11,0.15);
+  color: #f59e0b;
+  border: 0.5px solid rgba(245,158,11,0.3);
+  font-family: "DM Mono", monospace;
+}
+
+.rsc-card-header {
+  @apply flex items-center gap-3 mb-4;
+}
+
+.rsc-model-dot {
+  @apply rounded-full flex-shrink-0;
+  width: 10px; height: 10px;
+}
+
+.rsc-model-name {
+  font-family: "Syne", sans-serif;
+  @apply text-base font-bold text-slate-100;
+}
+
+.rsc-model-year {
+  @apply text-xs;
+  color: #484f58;
+  font-family: "DM Mono", monospace;
+}
+
+.rsc-card-auc {
+  @apply ml-auto text-sm font-bold;
+  font-family: "Syne", sans-serif;
+}
+
+/* ── Radar ────────────────────────────────────────────────────────────────── */
+.rsc-radar-wrap {
+  @apply flex items-center gap-3 mb-4;
+}
+
+.rsc-key-stats {
+  @apply flex flex-col gap-2 flex-1;
+}
+
+.rsc-key-stat {
+  @apply flex justify-between;
+}
+
+.rsc-ks-label {
+  @apply text-xs;
+  color: #484f58;
+  font-family: "DM Mono", monospace;
+}
+
+.rsc-ks-val {
+  @apply text-xs font-semibold text-slate-300;
+}
+
+.rsc-description {
+  @apply text-xs leading-relaxed mb-4;
+  color: #8b949e;
+}
+
+.rsc-expand-btn {
+  @apply w-full py-1.5 rounded-lg text-xs cursor-pointer transition-all border-none text-left px-3;
+  background: rgba(255,255,255,0.03);
+  color: #484f58;
+  font-family: "DM Mono", monospace;
+}
+
+.rsc-expand-btn:hover { background: rgba(255,255,255,0.06); color: #8b949e; }
+
+/* ── Metrics Grid ─────────────────────────────────────────────────────────── */
+.rsc-metrics-grid {
+  @apply flex flex-col gap-2 mt-3;
+}
+
+.rsc-metric-row {
+  @apply flex items-center gap-2;
+}
+
+.rsc-metric-row.highlighted { background: rgba(255,255,255,0.03); border-radius: 8px; padding: 2px 4px; }
+
+.rsc-metric-label {
+  @apply text-xs flex-shrink-0;
+  color: #484f58;
+  width: 120px;
+  font-family: "DM Mono", monospace;
+}
+
+.rsc-metric-val {
+  @apply text-xs font-semibold flex-shrink-0;
+  width: 55px;
+  text-align: right;
+}
+
+/* ── Bar ──────────────────────────────────────────────────────────────────── */
+.rsc-bar-track {
+  @apply flex-1 rounded-full overflow-hidden;
+  height: 4px;
+  background: rgba(255,255,255,0.06);
+}
+
+.rsc-bar-fill {
+  @apply h-full rounded-full;
+  transition: width 0.8s ease;
+}
+
+/* ── Metric Tabs ──────────────────────────────────────────────────────────── */
+.rsc-metric-tabs {
+  @apply flex flex-wrap gap-2 mb-5;
+}
+
+.rsc-metric-tab {
+  @apply px-3 py-1.5 rounded-lg text-xs cursor-pointer transition-all border-none;
+  font-family: "DM Mono", monospace;
+  background: rgba(255,255,255,0.03);
+  border: 0.5px solid #21262d;
+  color: #484f58;
+}
+
+.rsc-metric-tab.active {
+  background: rgba(99,102,241,0.15);
+  border-color: rgba(99,102,241,0.3);
+  color: #818cf8;
+}
+
+/* ── Charts Grid ──────────────────────────────────────────────────────────── */
+.rsc-charts-grid {
+  @apply grid grid-cols-3 gap-4;
+}
+
+.rsc-chart-wrap {
+  @apply rounded-2xl p-4;
+  background: rgba(13,17,23,0.95);
+  border: 1px solid #21262d;
+}
+
+.rsc-chart-label {
+  font-family: "DM Mono", monospace;
+  @apply text-xs uppercase tracking-wider mb-3;
+  color: #484f58;
+}
+
+.rsc-chart-bars {
+  @apply flex flex-col gap-2;
+}
+
+.rsc-chart-row {
+  @apply flex items-center gap-2;
+}
+
+.rsc-chart-name {
+  @apply text-xs flex-shrink-0;
+  width: 88px;
+  color: #8b949e;
+  font-family: "DM Mono", monospace;
+}
+
+.rsc-chart-bar-track {
+  @apply flex-1 rounded-full overflow-hidden;
+  height: 6px;
+  background: rgba(255,255,255,0.06);
+}
+
+.rsc-chart-bar-fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.8s ease;
+}
+
+.rsc-chart-val {
+  @apply text-xs font-semibold flex-shrink-0;
+  width: 64px;
+  text-align: right;
+  font-family: "DM Mono", monospace;
+}
+
+.rsc-best-star { color: #f59e0b; }
+
+/* ── Trade-off ────────────────────────────────────────────────────────────── */
+.rsc-tradeoff-wrap {
+  @apply grid grid-cols-2 gap-5;
+}
+
+.rsc-tradeoff-insights {
+  @apply rounded-2xl p-5 flex flex-col gap-3;
+  background: rgba(13,17,23,0.95);
+  border: 1px solid #21262d;
+}
+
+.rsc-insight-title {
+  font-family: "Syne", sans-serif;
+  @apply text-sm font-semibold text-slate-200 mb-2;
+}
+
+.rsc-insight {
+  @apply flex items-start gap-3;
+}
+
+.rsc-insight-icon { @apply text-base flex-shrink-0 mt-0.5; }
+
+.rsc-insight-text {
+  @apply text-xs leading-relaxed;
+  color: #8b949e;
+}
+
+.rsc-scatter-legend {
+  @apply mt-2 text-right;
+}
+
+/* ── Confusion ────────────────────────────────────────────────────────────── */
+.rsc-confusion-note {
+  @apply text-xs mb-4 px-4 py-2 rounded-xl;
+  color: #484f58;
+  background: rgba(255,255,255,0.02);
+  border: 0.5px solid #21262d;
+  font-family: "DM Mono", monospace;
+}
+
+.rsc-confusion-row {
+  @apply grid grid-cols-5 gap-3;
+}
+
+.rsc-confusion {
+  @apply rounded-2xl p-4;
+  background: rgba(13,17,23,0.95);
+  border: 1px solid #21262d;
+}
+
+.rsc-confusion-name {
+  @apply text-xs font-bold mb-3 text-center;
+  font-family: "Syne", sans-serif;
+}
+
+.rsc-confusion-grid {
+  @apply grid grid-cols-2 gap-1.5;
+}
+
+.rsc-cell {
+  @apply flex flex-col items-center justify-center rounded-xl py-3;
+  background: rgba(255,255,255,0.03);
+}
+
+.rsc-cell-label {
+  font-family: "DM Mono", monospace;
+  @apply text-xs mb-1;
+  color: #484f58;
+}
+
+.rsc-cell-val {
+  @apply text-sm font-bold;
+  font-family: "Syne", sans-serif;
+}
+
+.rsc-confusion-legend {
+  @apply mt-4 text-center;
+}
+
+/* ── Table ────────────────────────────────────────────────────────────────── */
+.rsc-table-wrap {
+  @apply overflow-x-auto rounded-2xl;
+  border: 1px solid #21262d;
+}
+
+.rsc-table {
+  @apply w-full text-xs;
+  border-collapse: collapse;
+  font-family: "DM Mono", monospace;
+}
+
+.rsc-table th {
+  @apply px-4 py-3 text-left uppercase tracking-wider;
+  color: #484f58;
+  background: rgba(255,255,255,0.02);
+  border-bottom: 1px solid #21262d;
+}
+
+.rsc-table td {
+  @apply px-4 py-3;
+  color: #8b949e;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.rsc-table tr:last-child td { border-bottom: none; }
+
+.rsc-table tr:hover td {
+  background: rgba(255,255,255,0.02);
+}
+
+.rsc-table .best-row td {
+  background: rgba(245,158,11,0.04);
+}

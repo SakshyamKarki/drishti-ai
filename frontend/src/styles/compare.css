@@ -1,0 +1,441 @@
+@reference "tailwindcss";
+@reference "../index.css";
+
+/* ── Page ─────────────────────────────────────────────────────────────────── */
+.cmp-page {
+  @apply px-6 py-8 max-w-7xl mx-auto;
+}
+
+/* ── Header ───────────────────────────────────────────────────────────────── */
+.cmp-header {
+  @apply mb-8;
+}
+
+.cmp-header-tag {
+  @apply inline-block text-xs uppercase tracking-widest mb-3 px-3 py-1 rounded-full;
+  font-family: "DM Mono", monospace;
+  color: #818cf8;
+  background: rgba(99,102,241,0.1);
+  border: 0.5px solid rgba(99,102,241,0.25);
+}
+
+.cmp-title {
+  font-family: "Syne", sans-serif;
+  @apply text-3xl font-bold text-slate-100 mb-2;
+}
+
+.cmp-subtitle {
+  @apply text-sm max-w-2xl leading-relaxed;
+  color: #484f58;
+}
+
+/* ── Upload Zone ──────────────────────────────────────────────────────────── */
+.cmp-upload-zone {
+  @apply flex flex-col gap-5 max-w-xl;
+}
+
+.cmp-dropzone {
+  @apply flex flex-col items-center justify-center gap-3 rounded-2xl cursor-pointer transition-all p-10;
+  border: 1.5px dashed #21262d;
+  min-height: 200px;
+}
+
+.cmp-dropzone:hover,
+.cmp-dropzone.dragging {
+  border-color: rgba(99,102,241,0.5);
+  background: rgba(99,102,241,0.04);
+}
+
+.cmp-dropzone.filled {
+  @apply p-4;
+  border-color: rgba(99,102,241,0.3);
+}
+
+.cmp-preview-img {
+  @apply w-full rounded-xl object-cover;
+  max-height: 260px;
+}
+
+.cmp-preview-name {
+  @apply text-xs truncate w-full text-center;
+  color: #8b949e;
+}
+
+.cmp-drop-icon {
+  @apply text-4xl;
+  color: #30363d;
+}
+
+.cmp-drop-title {
+  @apply text-sm font-medium text-slate-200;
+}
+
+.cmp-drop-hint {
+  @apply text-xs;
+  color: #484f58;
+}
+
+/* ── Model Badges ─────────────────────────────────────────────────────────── */
+.cmp-model-badges {
+  @apply flex flex-wrap gap-2;
+}
+
+.cmp-model-badge {
+  @apply flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full;
+  color: #8b949e;
+  background: rgba(255,255,255,0.03);
+  border: 0.5px solid #21262d;
+}
+
+.cmp-badge-dot {
+  @apply rounded-full flex-shrink-0;
+  width: 6px; height: 6px;
+}
+
+/* ── Error ────────────────────────────────────────────────────────────────── */
+.cmp-err {
+  @apply text-xs px-3 py-2 rounded-xl;
+  color: #f87171;
+  background: rgba(248,113,113,0.08);
+  border: 0.5px solid rgba(248,113,113,0.2);
+}
+
+/* ── Progress ─────────────────────────────────────────────────────────────── */
+.cmp-progress-wrap {
+  @apply flex flex-col gap-1;
+}
+
+.cmp-progress-track {
+  @apply w-full rounded-full overflow-hidden;
+  height: 4px;
+  background: rgba(255,255,255,0.06);
+}
+
+.cmp-progress-fill {
+  @apply h-full rounded-full;
+  background: linear-gradient(90deg, #6366f1, #818cf8);
+  transition: width 1s ease;
+}
+
+.cmp-progress-label {
+  @apply text-xs;
+  color: #484f58;
+  font-family: "DM Mono", monospace;
+}
+
+/* ── Analyze Button ───────────────────────────────────────────────────────── */
+.cmp-analyze-btn {
+  @apply w-full py-3 rounded-xl text-sm font-semibold text-white transition-all border-none cursor-pointer;
+  font-family: "Syne", sans-serif;
+  background: linear-gradient(135deg, #6366f1, #818cf8);
+}
+
+.cmp-analyze-btn:disabled {
+  @apply opacity-40 cursor-not-allowed;
+}
+
+.cmp-analyze-btn:hover:not(:disabled) {
+  @apply opacity-90;
+}
+
+.cmp-loading-row {
+  @apply flex items-center justify-center gap-2;
+}
+
+.cmp-spinner {
+  @apply rounded-full inline-block;
+  width: 14px; height: 14px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Results Layout ───────────────────────────────────────────────────────── */
+.cmp-results {
+  @apply flex flex-col gap-6;
+}
+
+.cmp-results-top {
+  @apply grid grid-cols-2 gap-5;
+}
+
+.cmp-result-img-wrap {
+  @apply rounded-2xl overflow-hidden;
+  background: rgba(13,17,23,0.95);
+  border: 1px solid #21262d;
+}
+
+.cmp-result-img {
+  @apply w-full object-cover;
+  max-height: 320px;
+}
+
+.cmp-result-filename {
+  @apply text-xs px-4 py-2 truncate;
+  color: #484f58;
+}
+
+/* ── Ensemble Panel ───────────────────────────────────────────────────────── */
+.cmp-ensemble {
+  @apply flex flex-col gap-4 rounded-2xl p-5;
+  background: rgba(13,17,23,0.95);
+  border: 1px solid #21262d;
+}
+
+.cmp-ens-hero {
+  @apply flex flex-col gap-2;
+}
+
+.cmp-ens-label {
+  font-family: "DM Mono", monospace;
+  @apply text-xs uppercase tracking-wider;
+  color: #484f58;
+}
+
+.cmp-ens-verdict {
+  font-family: "Syne", sans-serif;
+  @apply text-4xl font-black leading-none;
+}
+
+.cmp-ens-conf {
+  @apply flex items-center gap-3;
+}
+
+.cmp-ens-conf-pct {
+  font-family: "Syne", sans-serif;
+  @apply text-2xl font-bold;
+}
+
+.cmp-ens-conf-label {
+  @apply text-xs;
+  color: #484f58;
+}
+
+.cmp-ens-score {
+  @apply text-xs;
+  color: #484f58;
+  font-family: "DM Mono", monospace;
+}
+
+/* ── Agreement ────────────────────────────────────────────────────────────── */
+.cmp-ens-agreement {
+  @apply flex flex-col gap-2;
+}
+
+.cmp-ens-section-label {
+  font-family: "DM Mono", monospace;
+  @apply text-xs uppercase tracking-wider;
+  color: #484f58;
+}
+
+.cmp-agree-bar {
+  @apply h-full rounded-full transition-all duration-700;
+}
+
+.cmp-agreement-meter {
+  @apply w-full rounded-full overflow-hidden;
+  height: 6px;
+  background: rgba(255,255,255,0.06);
+}
+
+.cmp-agreement-text {
+  @apply text-sm font-medium text-slate-200;
+}
+
+.cmp-vote-row {
+  @apply flex gap-4 text-xs;
+  font-family: "DM Mono", monospace;
+}
+
+/* ── Stats Grid ───────────────────────────────────────────────────────────── */
+.cmp-stats-grid {
+  @apply grid grid-cols-2 gap-2;
+}
+
+.cmp-stat-item {
+  @apply rounded-xl px-3 py-2;
+  background: rgba(255,255,255,0.03);
+  border: 0.5px solid #21262d;
+}
+
+.cmp-stat-label {
+  font-family: "DM Mono", monospace;
+  @apply text-xs uppercase tracking-wider mb-1;
+  color: #484f58;
+}
+
+.cmp-stat-val {
+  @apply text-base font-bold text-slate-200;
+  font-family: "Syne", sans-serif;
+}
+
+/* ── Per-Model Cards Row ──────────────────────────────────────────────────── */
+.cmp-cards-row {
+  @apply grid grid-cols-5 gap-3;
+}
+
+/* ── Model Card ───────────────────────────────────────────────────────────── */
+.cmp-model-card {
+  @apply rounded-2xl p-4 flex flex-col gap-3 relative;
+  background: rgba(13,17,23,0.95);
+  border: 1px solid #21262d;
+  animation: cardSlideIn 0.4s ease both;
+  transition: border-color 0.2s;
+}
+
+.cmp-model-card.ensemble-pick {
+  border-color: rgba(245,158,11,0.4);
+  box-shadow: 0 0 16px rgba(245,158,11,0.06);
+}
+
+.cmp-model-card:hover {
+  border-color: rgba(255,255,255,0.12);
+}
+
+@keyframes cardSlideIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.cmp-ep-badge {
+  @apply absolute -top-2 left-1/2 -translate-x-1/2 text-xs px-2 py-0.5 rounded-full whitespace-nowrap;
+  font-family: "DM Mono", monospace;
+  border: 0.5px solid rgba(245,158,11,0.4);
+}
+
+.cmp-card-head {
+  @apply flex items-center gap-2;
+}
+
+.cmp-dot {
+  @apply rounded-full flex-shrink-0;
+  width: 8px; height: 8px;
+}
+
+.cmp-card-name {
+  font-family: "Syne", sans-serif;
+  @apply text-xs font-bold text-slate-100 truncate;
+}
+
+.cmp-card-meta {
+  @apply text-xs ml-auto flex-shrink-0;
+  color: #484f58;
+  font-family: "DM Mono", monospace;
+}
+
+.cmp-verdict {
+  @apply text-xs font-bold py-1.5 rounded-lg text-center;
+  border: 0.5px solid;
+}
+
+.cmp-donut-row {
+  @apply flex items-center gap-2;
+}
+
+.cmp-probs {
+  @apply flex-1 flex flex-col gap-1;
+}
+
+.cmp-prob-row {
+  @apply flex justify-between text-xs;
+  font-family: "DM Mono", monospace;
+}
+
+.cmp-prob-track {
+  @apply flex w-full rounded-full overflow-hidden;
+  height: 5px;
+  background: rgba(255,255,255,0.06);
+}
+
+.cmp-prob-fake, .cmp-prob-real {
+  height: 100%;
+  transition: width 0.8s ease;
+}
+
+.cmp-footer {
+  @apply flex justify-between items-center pt-1;
+  border-top: 0.5px solid #21262d;
+}
+
+.cmp-footer-label {
+  @apply text-xs;
+  color: #484f58;
+  font-family: "DM Mono", monospace;
+}
+
+.cmp-footer-val {
+  @apply text-xs font-medium text-slate-300;
+  font-family: "DM Mono", monospace;
+}
+
+.cmp-error-note {
+  @apply text-xs rounded-lg px-2 py-1;
+  color: #f87171;
+  background: rgba(248,113,113,0.08);
+}
+
+/* ── Bottom Row ───────────────────────────────────────────────────────────── */
+.cmp-bottom-row {
+  @apply flex items-start gap-5;
+}
+
+/* ── Trust Chart ──────────────────────────────────────────────────────────── */
+.cmp-trust-chart {
+  @apply flex-1 rounded-2xl p-4 flex flex-col gap-2;
+  background: rgba(13,17,23,0.95);
+  border: 1px solid #21262d;
+}
+
+.cmp-section-title {
+  font-family: "DM Mono", monospace;
+  @apply text-xs uppercase tracking-wider;
+  color: #484f58;
+}
+
+.cmp-trust-row {
+  @apply flex items-center gap-2;
+}
+
+.cmp-trust-name {
+  @apply text-xs font-bold flex-shrink-0;
+  width: 36px;
+  font-family: "DM Mono", monospace;
+}
+
+.cmp-trust-track {
+  @apply flex-1 rounded-full overflow-hidden;
+  height: 6px;
+  background: rgba(255,255,255,0.06);
+}
+
+.cmp-trust-fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.8s ease;
+}
+
+.cmp-trust-val {
+  @apply text-xs flex-shrink-0;
+  width: 42px;
+  text-align: right;
+  color: #8b949e;
+  font-family: "DM Mono", monospace;
+}
+
+/* ── Reset Button ─────────────────────────────────────────────────────────── */
+.cmp-reset-btn {
+  @apply px-5 py-2.5 rounded-xl text-xs cursor-pointer transition-all;
+  background: transparent;
+  border: 0.5px solid #21262d;
+  color: #8b949e;
+  font-family: "DM Sans", sans-serif;
+  white-space: nowrap;
+  align-self: flex-end;
+}
+
+.cmp-reset-btn:hover {
+  background: rgba(255,255,255,0.04);
+  color: #e6edf3;
+}

@@ -1,0 +1,308 @@
+@reference "tailwindcss";
+@reference "../index.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap');
+
+/* ── Page ─────────────────────────────────────────────────────────────────── */
+.lnd-page {
+  @apply min-h-screen;
+  background: #060611;
+  color: #e6edf3;
+}
+
+/* ── Hero ─────────────────────────────────────────────────────────────────── */
+.lnd-hero {
+  @apply relative flex flex-col items-center text-center px-6 py-24;
+  overflow: hidden;
+}
+
+.lnd-hero-bg {
+  @apply absolute inset-0 pointer-events-none;
+  background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(99,102,241,0.15) 0%, transparent 70%);
+}
+
+.lnd-hero-grid {
+  @apply absolute inset-0 pointer-events-none;
+  background-image:
+    linear-gradient(rgba(99,102,241,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99,102,241,0.04) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.lnd-badge {
+  @apply relative z-10 inline-flex items-center gap-2 text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-8;
+  font-family: "DM Mono", monospace;
+  color: #818cf8;
+  background: rgba(99,102,241,0.1);
+  border: 0.5px solid rgba(99,102,241,0.3);
+}
+
+.lnd-badge-dot {
+  @apply rounded-full animate-pulse;
+  width: 6px; height: 6px;
+  background: #818cf8;
+}
+
+.lnd-hero-title {
+  @apply relative z-10 text-6xl font-black leading-tight mb-6;
+  font-family: "Syne", sans-serif;
+  max-width: 700px;
+}
+
+.lnd-brand {
+  background: linear-gradient(135deg, #818cf8, #c4b5fd, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.lnd-hero-sub {
+  @apply relative z-10 text-base leading-relaxed mb-8 max-w-xl;
+  color: #8b949e;
+}
+
+.lnd-hero-sub strong {
+  color: #e6edf3;
+}
+
+.lnd-hero-actions {
+  @apply relative z-10 flex gap-4 mb-12;
+}
+
+.lnd-btn-primary {
+  @apply px-7 py-3 rounded-xl text-sm font-semibold text-white cursor-pointer transition-all border-none;
+  font-family: "Syne", sans-serif;
+  background: linear-gradient(135deg, #6366f1, #818cf8);
+}
+
+.lnd-btn-primary:hover { @apply opacity-90 -translate-y-px; }
+
+.lnd-btn-secondary {
+  @apply px-7 py-3 rounded-xl text-sm font-medium cursor-pointer transition-all;
+  font-family: "Syne", sans-serif;
+  background: rgba(255,255,255,0.05);
+  border: 0.5px solid rgba(255,255,255,0.1);
+  color: #8b949e;
+}
+
+.lnd-btn-secondary:hover {
+  background: rgba(255,255,255,0.08);
+  color: #e6edf3;
+}
+
+.lnd-btn-lg { @apply px-10 py-4 text-base; }
+
+/* ── Stats ────────────────────────────────────────────────────────────────── */
+.lnd-stats-row {
+  @apply relative z-10 flex gap-6 flex-wrap justify-center;
+  padding: 20px 32px;
+  background: rgba(255,255,255,0.03);
+  border: 0.5px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+}
+
+.lnd-stat {
+  @apply flex flex-col items-center;
+}
+
+.lnd-stat-val {
+  font-family: "Syne", sans-serif;
+  @apply text-2xl font-bold text-slate-100;
+}
+
+.lnd-stat-label {
+  @apply text-xs mt-1;
+  color: #484f58;
+  font-family: "DM Mono", monospace;
+}
+
+/* ── Section ──────────────────────────────────────────────────────────────── */
+.lnd-section {
+  @apply px-6 py-16 max-w-6xl mx-auto;
+}
+
+.lnd-section-tag {
+  @apply inline-block text-xs uppercase tracking-widest mb-3 px-3 py-1 rounded-full;
+  font-family: "DM Mono", monospace;
+  color: #818cf8;
+  background: rgba(99,102,241,0.1);
+  border: 0.5px solid rgba(99,102,241,0.25);
+}
+
+.lnd-section-title {
+  font-family: "Syne", sans-serif;
+  @apply text-3xl font-bold text-slate-100 mb-3;
+}
+
+.lnd-section-sub {
+  @apply text-sm max-w-2xl mb-10 leading-relaxed;
+  color: #484f58;
+}
+
+/* ── Model Cards ──────────────────────────────────────────────────────────── */
+.lnd-models-row {
+  @apply grid grid-cols-5 gap-4;
+}
+
+.lnd-model-card {
+  @apply rounded-2xl p-4 flex flex-col gap-3 transition-all;
+  background: rgba(13,17,23,0.95);
+  border: 1px solid #21262d;
+  animation: fadeUp 0.5s ease both;
+}
+
+.lnd-model-card:hover {
+  border-color: var(--mc, rgba(255,255,255,0.2));
+  transform: translateY(-2px);
+}
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(12px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+.lnd-mc-top {
+  @apply flex items-center justify-between;
+}
+
+.lnd-mc-dot {
+  @apply rounded-full;
+  width:8px; height:8px;
+}
+
+.lnd-mc-year {
+  @apply text-xs;
+  color: #484f58;
+  font-family: "DM Mono", monospace;
+}
+
+.lnd-mc-name {
+  font-family: "Syne", sans-serif;
+  @apply text-sm font-bold text-slate-100;
+}
+
+.lnd-mc-desc {
+  @apply text-xs leading-relaxed;
+  color: #484f58;
+}
+
+.lnd-mc-acc-row {
+  @apply flex items-center gap-2 mt-auto;
+}
+
+.lnd-mc-acc-track {
+  @apply flex-1 rounded-full overflow-hidden;
+  height: 4px;
+  background: rgba(255,255,255,0.06);
+}
+
+.lnd-mc-acc-fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 1s ease;
+}
+
+.lnd-mc-acc-val {
+  @apply text-xs font-bold flex-shrink-0;
+  font-family: "DM Mono", monospace;
+}
+
+/* ── Features Grid ────────────────────────────────────────────────────────── */
+.lnd-features-grid {
+  @apply grid grid-cols-3 gap-4;
+}
+
+.lnd-feature-card {
+  @apply rounded-2xl p-5 flex flex-col gap-3 transition-all;
+  background: rgba(13,17,23,0.95);
+  border: 1px solid #21262d;
+}
+
+.lnd-feature-card:hover {
+  border-color: rgba(99,102,241,0.3);
+  background: rgba(99,102,241,0.04);
+}
+
+.lnd-feature-icon {
+  @apply text-2xl;
+}
+
+.lnd-feature-title {
+  font-family: "Syne", sans-serif;
+  @apply text-sm font-bold text-slate-100;
+}
+
+.lnd-feature-desc {
+  @apply text-xs leading-relaxed;
+  color: #484f58;
+}
+
+/* ── Steps ────────────────────────────────────────────────────────────────── */
+.lnd-steps-row {
+  @apply grid grid-cols-5 gap-4;
+}
+
+.lnd-step {
+  @apply rounded-2xl p-4 flex flex-col gap-2;
+  background: rgba(13,17,23,0.95);
+  border: 1px solid #21262d;
+}
+
+.lnd-step-num {
+  font-family: "DM Mono", monospace;
+  @apply text-xs;
+  color: #6366f1;
+}
+
+.lnd-step-title {
+  font-family: "Syne", sans-serif;
+  @apply text-sm font-bold text-slate-100;
+}
+
+.lnd-step-desc {
+  @apply text-xs leading-relaxed;
+  color: #484f58;
+}
+
+/* ── CTA Section ──────────────────────────────────────────────────────────── */
+.lnd-cta-section {
+  @apply relative flex flex-col items-center text-center px-6 py-20;
+  overflow: hidden;
+  border-top: 0.5px solid rgba(255,255,255,0.06);
+}
+
+.lnd-cta-glow {
+  @apply absolute inset-0 pointer-events-none;
+  background: radial-gradient(ellipse 50% 60% at 50% 100%, rgba(99,102,241,0.12) 0%, transparent 70%);
+}
+
+.lnd-cta-title {
+  font-family: "Syne", sans-serif;
+  @apply relative z-10 text-3xl font-bold text-slate-100 mb-3;
+}
+
+.lnd-cta-sub {
+  @apply relative z-10 text-sm mb-8;
+  color: #484f58;
+}
+
+/* ── Footer ───────────────────────────────────────────────────────────────── */
+.lnd-footer {
+  @apply flex flex-col items-center py-8 px-6;
+  border-top: 0.5px solid rgba(255,255,255,0.06);
+}
+
+.lnd-footer-logo {
+  font-family: "Syne", sans-serif;
+  @apply text-lg font-bold mb-2;
+  background: linear-gradient(135deg, #818cf8, #c4b5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.lnd-footer-sub {
+  @apply text-xs;
+  color: #484f58;
+  font-family: "DM Mono", monospace;
+}
